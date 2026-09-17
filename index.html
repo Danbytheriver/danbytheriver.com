@@ -1,0 +1,115 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan By The River</title>
+    <style>
+        /* Modern CSS Reset & Full Crisp Black Background */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #000000; /* Pure black */
+            color: #ffffff;
+            font-family: "Didot", "Bodoni MT", "Cinzel", Georgia, serif;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Centered Brand Header Container */
+        .brand-header {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .brand-header img {
+            width: 100%;
+            height: auto;
+            display: block;
+            mix-blend-mode: screen; /* Blends the graphic seamlessly into the page background */
+        }
+
+        /* Video Section taking up exactly 3/4 (75%) of the viewport width */
+        .video-section {
+            width: 75vw; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 2x2 Responsive Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 30px;
+        }
+
+        /* Individual Premium Video Boxes */
+        .video-box {
+            background-color: #050505; /* Deep off-black contrast */
+            border: 1px solid #1a1a1a;   /* Subtle boundary border */
+            border-radius: 8px;
+            aspect-ratio: 16 / 9;        /* Perfect widescreen display ratio */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #555555;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .video-box:hover {
+            border-color: #333333;
+            background-color: #0a0a0a;
+        }
+
+        /* Scales actual videos perfectly within the grid slots */
+        .video-box video, .video-box iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive stack for smartphones/tablets */
+        @media (max-width: 768px) {
+            .video-section { width: 90vw; }
+            .video-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. BRAND HEADER (SEAMLESS BLACK GRAPHIC) -->
+    <div class="brand-header">
+        <!-- Upload your cropped picture via your 3rd party uploader and drop the direct link below -->
+        <img src="YOUR_THIRD_PARTY_IMAGE_URL_HERE.jpg" alt="Dan By The River">
+    </div>
+
+    <!-- 2. FOUR VIDEO BOXES (3/4 SCREEN WIDTH) -->
+    <main class="video-section">
+        <div class="video-grid">
+            <div class="video-box">Video Slot 1</div>
+            <div class="video-box">Video Slot 2</div>
+            <div class="video-box">Video Slot 3</div>
+            <div class="video-box">Video Slot 4</div>
+        </div>
+    </main>
+
+</body>
+</html>
+
